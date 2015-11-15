@@ -1,3 +1,5 @@
+#ifndef GRAPHICS_H
+#define GRAPHICS_H
 #define AIR 10
 typedef struct boxx {
         int length, value, color;
@@ -22,3 +24,4 @@ void moveright(int startx, int endx, int y, boxx b, int speed);
 void swapboxes(int b1pos, int b2pos, int speed) ;
 void moveleft(int startx, int endx, int y, boxx b, int speed);
 void Draw_Fill(int sx, int sy, int h, int v, int color);
+#endif

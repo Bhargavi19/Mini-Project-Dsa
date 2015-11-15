@@ -5,6 +5,7 @@
 #define INSERTION 3
 #define MERGE 4
 #define BUFFER 1
+int newarr[8];
 void Bubble_Sort();
 void Insertion_Sort();
 void Merge_Sort();
@@ -13,4 +14,7 @@ void print_intermediate_menu(int no);
 int Get_Intermediate_Choice();
 void Print_Animation(int value);
 void Print_SORT(int s);
+void clear_intmenu();
+void init();
+void Input_Array();
 #endif

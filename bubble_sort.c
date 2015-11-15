@@ -2,10 +2,11 @@
 #include"project.h"
 #include"graphics_funcs.h"
 int b_speed;
+/*function to set "array" to a desired sorting step*/
 void b_sort(int n) {
 	int i, j;
 	boxx temp;
-	initialisearr(2,3);
+	init();
 	for(i = 0 ; i < 8 ; i++){
 		if(i == n)
 			break;
@@ -18,6 +19,7 @@ void b_sort(int n) {
 		}
 	}
 }
+/*Function to get animation speed of bubble sort*/
 void Get_Speed(){
 	int ch;
 	Print_Animation(b_speed);
@@ -41,11 +43,13 @@ void Get_Speed(){
 	}while(ch != '\n');
 	echo();
 }
+/*Function which does the actual sorting of the array and displaying of the same*/
 void Bubble_Sort(){
+	Input_Array();
 	clear();
 	int menuitem = 0;
 	b_speed = 1;
-	//Print_SORT(BUBBLE);
+	Print_SORT(BUBBLE);
 	Get_Speed();
 	int i, j; 
 	boxx temp;
@@ -61,7 +65,7 @@ void Bubble_Sort(){
 			}
 		}
 		init_pair(1, COLOR_CYAN, COLOR_BLACK);
-                attron(COLOR_PAIR(1));
+		attron(COLOR_PAIR(1));
 		printarray();  
 		attroff(COLOR_PAIR(1));
 		menuitem = Get_Intermediate_Choice();
@@ -76,4 +80,5 @@ void Bubble_Sort(){
 	}
 	b_sort(-1);
 	printarray();
+	clear_intmenu();
 }
